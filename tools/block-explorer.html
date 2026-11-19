@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Block Explorer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/tools/block-explorer/block-explorer.css">
+    <script src="https://da.live/nx/utils/sdk.js" type="module"></script>
+    <script src="/tools/block-explorer/block-explorer.js" type="module"></script>
+  </head>
+  <body>
+    <main class="bx">
+      <header class="bx-header">
+        <div>
+          <p class="bx-eyebrow">Experience Workspace · <span class="bx-site"></span></p>
+          <h1>Block Explorer</h1>
+          <p class="bx-sub">Every block, every variant, every page — in one scan.</p>
+        </div>
+        <form class="bx-scan">
+          <label>
+            <span>Scope</span>
+            <input name="scope" value="/" spellcheck="false" aria-label="Folder to scan">
+          </label>
+          <label>
+            <span>Exclude</span>
+            <input name="exclude" value="/docs, /drafts, /.da" spellcheck="false" aria-label="Folders to exclude">
+          </label>
+          <button type="submit" class="bx-btn bx-btn-primary">Scan site</button>
+        </form>
+      </header>
+
+      <section class="bx-progress" hidden>
+        <div class="bx-progress-text"></div>
+        <div class="bx-progress-bar"><span></span></div>
+      </section>
+
+      <p class="bx-message" role="status" aria-live="polite"></p>
+
+      <section class="bx-empty">
+        <div class="bx-empty-art" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h2>Ready to explore</h2>
+        <p>Scan the site to see which blocks your authors really use, which variants exist, and where content and code are out of sync.</p>
+      </section>
+
+      <section class="bx-results" hidden>
+        <div class="bx-kpis"></div>
+        <div class="bx-alerts"></div>
+
+        <div class="bx-toolbar">
+          <div class="bx-tabs" role="tablist">
+            <button type="button" role="tab" data-tab="blocks" aria-selected="true">Blocks</button>
+            <button type="button" role="tab" data-tab="pages" aria-selected="false">Pages</button>
+          </div>
+          <div class="bx-toolbar-right">
+            <label class="bx-toggle"><input type="checkbox" class="bx-system"> Show metadata</label>
+            <span class="bx-scanned"></span>
+            <button type="button" class="bx-btn bx-export">Export CSV</button>
+          </div>
+        </div>
+
+        <div class="bx-panel" data-panel="blocks">
+          <div class="bx-split">
+            <ol class="bx-ranking"></ol>
+            <aside class="bx-detail"></aside>
+          </div>
+        </div>
+
+        <div class="bx-panel" data-panel="pages" hidden>
+          <input type="search" class="bx-search" placeholder="Filter pages or blocks…" aria-label="Filter pages or blocks">
+          <table class="bx-table">
+            <thead>
+              <tr><th>Page</th><th>Blocks</th><th class="bx-num">Uses</th><th></th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

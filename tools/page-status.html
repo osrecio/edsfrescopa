@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Page Status</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/tools/page-status/page-status.css">
+    <script src="https://da.live/nx/utils/sdk.js" type="module"></script>
+    <script src="/tools/page-status/page-status.js" type="module"></script>
+  </head>
+  <body>
+    <main class="ps">
+      <header class="ps-header">
+        <div>
+          <h1>Page Status</h1>
+          <nav class="ps-crumbs" aria-label="Folder"></nav>
+        </div>
+        <div class="ps-actions">
+          <span class="ps-count"></span>
+          <button type="button" class="ps-btn" data-action="preview" disabled>Preview</button>
+          <button type="button" class="ps-btn ps-btn-primary" data-action="live" disabled>Publish</button>
+        </div>
+      </header>
+      <p class="ps-message" role="status" aria-live="polite"></p>
+      <table class="ps-table">
+        <thead>
+          <tr>
+            <th class="ps-check"><input type="checkbox" class="ps-all" aria-label="Select all pages"></th>
+            <th>Name</th>
+            <th>Edited</th>
+            <th>Preview</th>
+            <th>Published</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </main>
+  </body>
+</html>

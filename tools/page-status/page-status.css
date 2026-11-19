@@ -1,0 +1,184 @@
+:root {
+  --ps-bg: #fff;
+  --ps-fg: #2c2c2c;
+  --ps-muted: #6e6e6e;
+  --ps-border: #e1e1e1;
+  --ps-row-hover: #f6f6f6;
+  --ps-accent: #3b63fb;
+  --ps-ok-bg: #e6f4ea;
+  --ps-ok-fg: #1e6b34;
+  --ps-stale-bg: #fff4d6;
+  --ps-stale-fg: #7a5600;
+  --ps-none-bg: #f0f0f0;
+  --ps-none-fg: #6e6e6e;
+  --ps-error-bg: #fde7e7;
+  --ps-error-fg: #a11d1d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--ps-bg);
+  color: var(--ps-fg);
+  font: 14px/1.4 adobe-clean, 'Source Sans Pro', -apple-system, system-ui, sans-serif;
+}
+
+.ps {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.ps-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.ps-header h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+.ps-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: var(--ps-muted);
+}
+
+.ps a {
+  color: var(--ps-accent);
+  text-decoration: none;
+}
+
+.ps a:hover {
+  text-decoration: underline;
+}
+
+.ps-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ps-count {
+  color: var(--ps-muted);
+  margin-right: 8px;
+}
+
+.ps-btn {
+  padding: 6px 16px;
+  border: 2px solid var(--ps-fg);
+  border-radius: 16px;
+  background: transparent;
+  color: var(--ps-fg);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ps-btn-primary {
+  border-color: var(--ps-accent);
+  background: var(--ps-accent);
+  color: #fff;
+}
+
+.ps-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.ps-message {
+  min-height: 1.4em;
+  margin: 0 0 8px;
+  color: var(--ps-muted);
+}
+
+.ps-message[data-type="error"] {
+  color: var(--ps-error-fg);
+}
+
+.ps-message[data-type="ok"] {
+  color: var(--ps-ok-fg);
+}
+
+.ps-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ps-table th,
+.ps-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--ps-border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.ps-table th {
+  color: var(--ps-muted);
+  font-weight: 600;
+}
+
+.ps-table tbody tr:hover {
+  background: var(--ps-row-hover);
+}
+
+.ps-check {
+  width: 40px;
+}
+
+.ps-file td {
+  color: var(--ps-muted);
+}
+
+.ps-empty {
+  color: var(--ps-muted);
+  text-align: center;
+}
+
+.ps-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.ps-ok {
+  background: var(--ps-ok-bg);
+  color: var(--ps-ok-fg);
+}
+
+.ps-stale {
+  background: var(--ps-stale-bg);
+  color: var(--ps-stale-fg);
+}
+
+.ps-none,
+.ps-loading {
+  background: var(--ps-none-bg);
+  color: var(--ps-none-fg);
+}
+
+.ps-error {
+  background: var(--ps-error-bg);
+  color: var(--ps-error-fg);
+}
+
+@media (width < 700px) {
+  .ps {
+    padding: 16px;
+  }
+
+  .ps-table th:nth-child(3),
+  .ps-table td:nth-child(3) {
+    display: none;
+  }
+}

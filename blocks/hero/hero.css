@@ -100,7 +100,7 @@ main > .section.hero-container {
 }
 
 /* stylelint-disable selector-not-notation, selector-class-pattern, no-descending-specificity */
-.hero > div > div > *:not(p:first-child):not(.prosemirror-editor:first-child),
+.hero > div > div > *:not(p:first-child):not(picture):not(.prosemirror-editor:first-child),
 .hero > div > div > .prosemirror-editor:not(:first-child) > .ProseMirror > * {
   position: relative;
   z-index: 2;

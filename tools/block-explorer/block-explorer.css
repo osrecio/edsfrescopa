@@ -139,6 +139,26 @@ body {
   color: #fff;
 }
 
+.bx-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.bx .bx-btn-small {
+  padding: 4px 14px;
+  border-width: 1px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.bx .bx-btn-small:hover {
+  border-color: var(--bx-accent);
+  color: var(--bx-accent);
+  text-decoration: none;
+}
+
 .bx-btn:disabled {
   opacity: 0.5;
   cursor: progress;
